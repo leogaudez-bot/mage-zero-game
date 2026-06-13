@@ -2,7 +2,7 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { ARCHETYPES, CARDS, STAGES, applyChoice, getRank, getStage, nextStage, pickCard } from './gameLogic.js';
 import './styles.css';
 
-const STORAGE_KEY = 'mage-zero-save-v1';
+const STORAGE_KEY = 'mage-zero-save-v2';
 const DEFAULT_NAMES = ['Léo', 'Piotr', 'Nico'];
 
 function makePlayers(names) {
@@ -61,7 +61,7 @@ export default function App() {
     setActive(0);
     setSelected(null);
     setScreen('play');
-    setToast('Grimoire initialisé. Aucun destin réel ne sera jugé.');
+    setToast('Tableau de pucellerie chargé. Ceci est du meme, pas un diagnostic médical.');
     navigator.vibrate?.(18);
   }
 
@@ -107,15 +107,15 @@ export default function App() {
           <div className="home screen">
             <div className="heroArt" role="img" aria-label="Illustration dark fantasy d’un grimoire cosmique et d’un mage abstrait" />
             <div className="wikiLine">[retour en haut ↑] [modifier]</div>
-            <h1>L’Ascension Cosmique du Mage Zéro</h1>
-            <p className="lead">Un mini-jeu mobile de lore absurde : grimpe les stades, gagne de l’aura, deviens une entité que même Wikipédia refuse de sourcer.</p>
-            <p className="safe">“Puceau” = classe magique imaginaire. Aucun humain réel n’est noté. Seule ton aura de gobelin cosmique compte.</p>
+            <h1>Stade de pucellerie Simulator</h1>
+            <p className="lead">Le jeu débile basé sur le tableau : 18 ans Full puceau, 30 ans Mage Noir, 50 ans Overlord, 120 ans créateur de matière cosmique.</p>
+            <p className="safe">Version meme / soirée : on joue le classement absurde des mecs qui restent puceaux. C’est volontairement dramatique, pas une évaluation de vie réelle.</p>
 
             <div className="ctaGrid">
               <button className="primary" onClick={() => start('solo')}>Mode solo</button>
               <button onClick={() => setScreen('setup')}>Mode party</button>
             </div>
-            <button className="linkButton" onClick={() => setScreen('stages')}>Voir les stades interdits</button>
+            <button className="linkButton" onClick={() => setScreen('stages')}>Lire le tableau original</button>
           </div>
         )}
 
@@ -124,7 +124,7 @@ export default function App() {
             <h2>Composer le cercle</h2>
             <p>Un téléphone, plusieurs joueurs, zéro backend. Écris un prénom par ligne.</p>
             <textarea value={names} onChange={(event) => setNames(event.target.value)} />
-            <h3>Archétype du grimoire</h3>
+            <h3>Archétype de puceau</h3>
             <div className="archetypes">
               {ARCHETYPES.map((item) => (
                 <button key={item.id} className={archetype === item.id ? 'selected archetype' : 'archetype'} onClick={() => setArchetype(item.id)}>
@@ -132,15 +132,15 @@ export default function App() {
                 </button>
               ))}
             </div>
-            <div className="bottomBar"><button className="primary" onClick={() => start('party')}>Ouvrir le Grimoire</button></div>
+            <div className="bottomBar"><button className="primary" onClick={() => start('party')}>Lancer le classement</button></div>
           </div>
         )}
 
         {screen === 'stages' && (
           <div className="screen">
-            <h2>Stades de lore</h2>
+            <h2>Stade de pucellerie</h2>
             <div className="stageList">
-              {STAGES.slice(1).map((stage) => <div className="stageRow" key={stage.label}><span>{stage.icon}</span><b>{stage.threshold} aura</b><p>{stage.label}<small>{stage.subtitle}</small></p></div>)}
+              {STAGES.slice(1).map((stage) => <div className="stageRow" key={stage.label}><span>{stage.icon}</span><b>{stage.threshold} ans</b><p>{stage.label}<small>{stage.subtitle}</small></p></div>)}
             </div>
             <button className="primary" onClick={() => setScreen('home')}>Retour au portail</button>
           </div>
@@ -157,7 +157,7 @@ export default function App() {
               <div><span className="wikiLine">stade actuel</span><h2>{currentStage.label}</h2><p>{currentStage.subtitle}</p></div>
             </section>
             <div className="meter"><span style={{ width: `${progress}%` }} /></div>
-            <p className="next">Prochain palier : {upcoming ? `${upcoming.label} à ${upcoming.threshold} aura` : 'Transcendance complète'}</p>
+            <p className="next">Prochain palier : {upcoming ? `${upcoming.threshold} ans · ${upcoming.label}` : 'Pucellerie métaphysique complète'}</p>
 
             <article className={selected ? 'challenge revealed' : 'challenge'}>
               <div className="stamp">{card.badge}</div>
@@ -184,7 +184,7 @@ export default function App() {
             <div className="finalCard">
               <span className="stamp">LORE VALIDÉ</span>
               <h2>{leaderBoard[0]?.name} devient<br />{getStage(leaderBoard[0]?.aura || 0).label}</h2>
-              <p>La prophétie est accomplie. Aucun destin n’a été amélioré, mais beaucoup d’aura a été gaspillée avec panache.</p>
+              <p>La prophétie de pucellerie est accomplie. Le classement est fictif, mais le malaise cosmique est très réel.</p>
               <div className="leaderboard">
                 {leaderBoard.map((player, index) => <div key={player.id}><b>#{index + 1} {player.name}</b><span>{player.aura} aura · {getStage(player.aura).label}</span></div>)}
               </div>

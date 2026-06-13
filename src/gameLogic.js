@@ -1,104 +1,112 @@
 export const STAGES = [
-  { threshold: 0, label: 'Initié gêné', subtitle: 'niveau brouillon', icon: '🕯️' },
-  { threshold: 18, label: 'Full puceau', subtitle: 'classe magique imaginaire', icon: '📜' },
-  { threshold: 30, label: 'Mage Noir', subtitle: 'la capuche se verrouille', icon: '🌑' },
-  { threshold: 40, label: 'Archimage', subtitle: 'admin du grimoire', icon: '🧙' },
-  { threshold: 50, label: 'Overlord', subtitle: 'seigneur du canapé', icon: '👑' },
-  { threshold: 70, label: 'Eternal', subtitle: 'ne répond plus aux notifs', icon: '🪐' },
-  { threshold: 90, label: 'Transcendant', subtitle: 'hors du thread', icon: '✨' },
-  { threshold: 100, label: 'Entité d’énergie pure', subtitle: 'plus de corps, que du lore', icon: '💠' },
-  { threshold: 120, label: 'Créateur de matière cosmique', subtitle: 'boss final non certifié', icon: '🌌' },
+  { threshold: 0, label: 'Pré-puceau administratif', subtitle: 'le dossier n’est pas encore ouvert', icon: '🧾' },
+  { threshold: 18, label: 'Full puceau', subtitle: 'entrée officielle dans le tableau', icon: '📜' },
+  { threshold: 21, label: 'Déchet de la société', subtitle: 'rang wiki brutal, à prendre au 12e degré', icon: '🗑️' },
+  { threshold: 25, label: 'Guerrier Solitaire', subtitle: 'build solo, cape imaginaire', icon: '⚔️' },
+  { threshold: 30, label: 'Mage Noir', subtitle: 'la fameuse capuche se débloque', icon: '🌑' },
+  { threshold: 40, label: 'Archimage', subtitle: 'maîtrise avancée du non-contact', icon: '🧙' },
+  { threshold: 50, label: 'Overlord ou seigneur de guerre', subtitle: 'boss de fin de salon', icon: '👑' },
+  { threshold: 58, label: 'Modérateur', subtitle: 'pouvoir absolu sur un forum mort', icon: '🛡️' },
+  { threshold: 65, label: 'Terreur de la lumière', subtitle: 'ne sort qu’en patch nocturne', icon: '🕳️' },
+  { threshold: 70, label: 'Eternal', subtitle: 'la timeline ne peut plus te tuer', icon: '♾️' },
+  { threshold: 75, label: 'Spectre', subtitle: 'présence détectée uniquement en DM', icon: '👻' },
+  { threshold: 80, label: 'Immanant ou empereur du chaos', subtitle: 'l’orthographe elle-même a abandonné', icon: '🌀' },
+  { threshold: 90, label: 'Transcendant', subtitle: 'hors du corps, hors du marché', icon: '✨' },
+  { threshold: 100, label: 'Entité d’énergie pure', subtitle: 'plus de chair, seulement l’aura', icon: '💠' },
+  { threshold: 110, label: 'Collisionneur de monde', subtitle: 'chaque swipe crée une dimension', icon: '☄️' },
+  { threshold: 120, label: 'Obédiant créateur de la matière cosmique', subtitle: 'rang final du célibat métaphysique', icon: '🌌' },
 ];
 
 export const ARCHETYPES = [
-  { id: 'ratio', name: 'Le Ratio Fantôme', perk: 'Chaque échec drôle donne +2 aura.', emoji: '👻' },
-  { id: 'thread', name: 'Le Théoricien du Thread', perk: 'Les choix bavards valent +1 aura.', emoji: '🧵' },
-  { id: 'modo', name: 'Le Modérateur Épuisé', perk: 'Immunisé contre une malédiction.', emoji: '🛡️' },
-  { id: 'screen', name: 'Le Screenshoteur Pro', perk: 'Le premier quiz réussi donne +5 bonus.', emoji: '📸' },
+  { id: 'forum', name: 'Le Forumeur Fossile', perk: 'Les réponses de vieux forum donnent +1 aura.', emoji: '💾' },
+  { id: 'hoodie', name: 'Le Hoodie Maudit', perk: 'Chaque échec assumé donne +2 aura.', emoji: '🧥' },
+  { id: 'modo', name: 'Le Futur Modérateur', perk: 'Immunisé contre une humiliation par partie.', emoji: '🛡️' },
+  { id: 'ermite', name: 'L’Ermite Premium', perk: 'Les choix solo/dramatiques valent +1 aura.', emoji: '🕯️' },
 ];
 
 export const CARDS = [
   {
-    type: 'lore', title: 'La Chaussette Solitaire', badge: 'source nécessaire',
-    prompt: 'Tu trouves une chaussette seule au milieu de la pièce. Décision mystique ?',
+    type: 'lore', title: 'Le Tableau Interdit', badge: 'source : wiki maudit',
+    prompt: 'Tu viens de lire les stades de pucellerie. Quelle est ta première réaction ? ',
     choices: [
-      { text: 'L’ignorer comme un PNJ.', aura: 2, note: 'Le Conseil bâille poliment.' },
-      { text: 'La nommer relique interdite.', aura: 5, note: 'Une relique sale, mais une relique.' },
-      { text: 'L’ajouter à mon build.', aura: 7, note: 'Build non homologué, aura maximale.' },
-      { text: 'Ouvrir un forum de 2009.', aura: 6, note: 'La sagesse ancienne sent le phpBB.' },
+      { text: 'Je ferme l’onglet comme un lâche.', aura: 2, note: 'La lumière gagne un round.' },
+      { text: 'Je calcule mon âge exact au mois près.', aura: 6, note: 'Diagnostic inutile mais précis.' },
+      { text: 'J’accepte la prophétie et je mets une capuche.', aura: 8, note: 'Le tissu noir augmente ton aura.' },
+      { text: 'Je partage à un pote “courage frérot”.', aura: 7, note: 'Solidarité du gouffre validée.' },
     ],
   },
   {
-    type: 'quiz', title: 'Artefact Suprême', badge: 'quiz certifié faux',
-    prompt: 'Quel objet concentre le plus d’aura noire ?',
+    type: 'quiz', title: 'Déblocage Mage Noir', badge: '30 ans requis',
+    prompt: 'À quel âge le puceau devient-il officiellement Mage Noir selon le grimoire ?',
     choices: [
-      { text: 'Une épée ancienne', aura: 2, note: 'Trop classique, -12 originalité.' },
-      { text: 'Un vieux câble HDMI', aura: 8, note: 'Objet légendaire : marche une fois sur deux.' },
-      { text: 'Une tasse loyale mais sale', aura: 6, note: 'Elle connaît tes secrets.' },
-      { text: 'Le bouton “mettre à jour plus tard”', aura: 7, note: 'Pouvoir de procrastination divine.' },
+      { text: '25 ans, après le Guerrier Solitaire', aura: 3, note: 'Presque. Là tu farmes encore.' },
+      { text: '30 ans, capuche automatique', aura: 9, note: 'Correct. La magie noire RH te contacte.' },
+      { text: '40 ans, avec option Archimage', aura: 5, note: 'C’est le palier supérieur, révise le wiki.' },
+      { text: '58 ans, quand tu deviens modo', aura: 4, note: 'Trop tard, tu as déjà les permissions.' },
     ],
   },
   {
-    type: 'rituel', title: 'Pose d’Invocation', badge: 'rituel express',
-    prompt: 'Prends une pose dramatique 5 secondes comme si tu ouvrais un portail cosmique.',
+    type: 'rituel', title: 'Contrôle Anti-Lumière', badge: '65 ans simulator',
+    prompt: 'La lumière du jour entre dans la chambre. Que fait le prétendant “Terreur de la lumière” ?',
     choices: [
-      { text: 'Réussi avec panache', aura: 8, note: 'Le portail est gêné mais ouvert.' },
-      { text: 'Raté mais très drôle', aura: 5, note: 'Le rire nourrit l’abyme.' },
-      { text: 'Refus digne', aura: 2, note: 'Tu gardes ton honneur, pas ton aura.' },
+      { text: 'Ferme le volet avec gravité.', aura: 6, note: 'La photosynthèse recule.' },
+      { text: 'Siffle comme un vampire en jogging.', aura: 8, note: 'Performance ridicule mais canon.' },
+      { text: 'Ouvre quand même. Développement personnel.', aura: 2, note: 'Choix sain, donc peu de lore.' },
     ],
   },
   {
-    type: 'malediction', title: 'Bug du Grimoire', badge: 'malédiction',
-    prompt: 'Au prochain choix, tu dois prononcer le mot “tupperware” avant de cliquer.',
+    type: 'malediction', title: 'Forum de 2009', badge: 'malédiction phpBB',
+    prompt: 'Tu dois justifier ton stade actuel comme si tu écrivais sur un vieux forum.',
     choices: [
-      { text: 'J’accepte ce destin hermétique', aura: 6, curse: 'tupperware', note: 'Le plastique scelle le pacte.' },
-      { text: 'Je tente une esquive administrative', aura: 3, note: 'Formulaire refusé par le donjon.' },
+      { text: '“Up, sujet sérieux, no fake svp.”', aura: 7, curse: 'forum', note: 'Odeur de signature animée détectée.' },
+      { text: '“Premier degré je pense être Archimage.”', aura: 8, note: 'L’aveu crée un champ de force.' },
+      { text: '“Topic à lock merci.”', aura: 5, note: 'Réflexe de modérateur prématuré.' },
     ],
   },
   {
-    type: 'duel', title: 'Duel d’Incantations Nulles', badge: 'party proof',
-    prompt: 'Invente un sort qui ne sert absolument à rien. Le groupe juge la nullité majestueuse.',
+    type: 'duel', title: 'Guerrier Solitaire', badge: '25 ans',
+    prompt: 'Duel party : chaque joueur invente le cri de guerre le plus triste possible.',
     choices: [
-      { text: 'Sort validé par le groupe', aura: 9, note: 'Nul, donc puissant.' },
-      { text: 'Sort moyen mais assumé', aura: 5, note: 'La médiocrité stabilise l’aura.' },
-      { text: 'Sort refusé par la science', aura: 3, note: 'La science est jalouse.' },
+      { text: 'Cri validé par le groupe', aura: 9, note: 'Solitaire, mais bruyant.' },
+      { text: 'Cri trop réel, silence gêné', aura: 5, note: 'Le malaise ajoute du réalisme.' },
+      { text: 'Refus, je suis déjà Spectre', aura: 4, note: 'L’absence est une stratégie.' },
     ],
   },
   {
-    type: 'lore', title: 'Le Screen Ressuscité', badge: 'drama archivé',
-    prompt: 'Un vieux screen ressort. Quelle défense choisis-tu ?',
+    type: 'lore', title: 'Le Screen “Mage noir vierge”', badge: 'x.com screenshot',
+    prompt: 'Un pote t’envoie le screenshot. Quelle réponse maximise l’aura ?',
     choices: [
-      { text: 'Je transforme ça en running gag.', aura: 8, note: 'Immunité par autodérision.' },
-      { text: 'Thread explicatif de 27 posts.', aura: 5, note: 'Personne ne lit, mais tout le monde respecte.' },
-      { text: 'Je disparais 48h.', aura: 4, note: 'Technique du brouillard.' },
-      { text: 'Je nie avec aplomb.', aura: 6, note: 'L’aplomb crée sa propre vérité.' },
+      { text: '“Dans quelques mois courage...”', aura: 8, note: 'Référence originale absorbée.' },
+      { text: '“Je suis déjà Transcendant.”', aura: 7, note: 'Mensonge ou prophétie ? Oui.' },
+      { text: '“Supprime ça.”', aura: 2, note: 'Trop humain, pas assez cosmique.' },
+      { text: '“Je lance un jeu web dessus.”', aura: 10, note: 'Meta-pouvoir débloqué.' },
     ],
   },
   {
-    type: 'rituel', title: 'Objets à Pouvoir', badge: 'inventaire',
-    prompt: 'Pointe un objet autour de toi et déclare son pouvoir caché.',
+    type: 'rituel', title: 'Overlord du Canapé', badge: '50 ans',
+    prompt: 'Pointe un objet autour de toi et proclame-le artefact de seigneur de guerre.',
     choices: [
-      { text: 'Pouvoir crédible et nul', aura: 7, note: 'Le lore gagne une annexe.' },
-      { text: 'Pouvoir trop puissant', aura: 5, note: 'Nerf prévu au prochain patch.' },
-      { text: 'Pouvoir incompréhensible', aura: 8, note: 'Parfait, personne ne peut contredire.' },
+      { text: 'Artefact nul mais convaincant', aura: 7, note: 'Le canapé reconnaît ton autorité.' },
+      { text: 'Artefact beaucoup trop puissant', aura: 6, note: 'Nerf prévu au prochain patch.' },
+      { text: 'Artefact incompréhensible', aura: 9, note: 'Personne ne peut te fact-checker.' },
     ],
   },
   {
-    type: 'quiz', title: 'Épreuve du Hoodie', badge: 'dress code',
-    prompt: 'Pourquoi ton hoodie est-il une armure légendaire ?',
+    type: 'quiz', title: 'Épreuve du Modérateur', badge: '58 ans',
+    prompt: 'Quel est le vrai pouvoir du Modérateur dans l’échelle ?',
     choices: [
-      { text: 'Capuche +12 furtivité sociale', aura: 8, note: 'Invisible en open space.' },
-      { text: 'Poche kangourou dimensionnelle', aura: 7, note: 'Contient câbles, miettes et regrets.' },
-      { text: 'Tissu enchanté anti-sortie', aura: 6, note: 'Très efficace le dimanche.' },
+      { text: 'Bannir la lumière', aura: 5, note: 'Ça vient plus tard, à 65 ans.' },
+      { text: 'Lock un topic sentimental', aura: 8, note: 'Pouvoir froid, précis, terrifiant.' },
+      { text: 'Créer la matière cosmique', aura: 3, note: 'Pas encore, jeune panneau admin.' },
     ],
   },
   {
-    type: 'finale', title: 'Collisionneur de Monde', badge: 'boss final',
-    prompt: 'Le lore menace de s’effondrer. Dernière action avant transcendance ?',
+    type: 'finale', title: 'Collisionneur de Monde', badge: '110 → 120 ans',
+    prompt: 'Tu approches du rang final. Dernière action avant de créer la matière cosmique ?',
     choices: [
-      { text: 'Compiler mon âme en production', aura: 12, note: 'Déploiement astral réussi.' },
-      { text: 'Créer une note de communauté cosmique', aura: 10, note: 'L’univers accepte la correction.' },
-      { text: 'Poster “je reviens plus tard”', aura: 6, note: 'Mensonge sacré, aura stable.' },
+      { text: 'Fusionner tous les onglets X ouverts', aura: 12, note: 'Un univers se compile dans Chrome.' },
+      { text: 'Déclarer “je suis obédiant” sans expliquer', aura: 10, note: 'Personne ne comprend, donc c’est profond.' },
+      { text: 'Fermer Discord et transcender', aura: 6, note: 'Impossible, mais noble tentative.' },
     ],
   },
 ];
@@ -122,8 +130,9 @@ export function pickCard(round, archetypeId = '') {
 
 export function applyChoice(player, choice, archetypeId = '') {
   let bonus = 0;
-  if (archetypeId === 'ratio' && choice.aura <= 3) bonus += 2;
-  if (archetypeId === 'thread' && choice.text.length > 28) bonus += 1;
+  if (archetypeId === 'hoodie' && choice.aura <= 3) bonus += 2;
+  if (archetypeId === 'forum' && /forum|topic|wiki|source|up/i.test(`${choice.text} ${choice.note}`)) bonus += 1;
+  if (archetypeId === 'ermite' && /solo|solitaire|spectre|absence|capuche/i.test(`${choice.text} ${choice.note}`)) bonus += 1;
   return {
     ...player,
     aura: Math.max(0, player.aura + choice.aura + bonus),
